@@ -1,19 +1,20 @@
-# @pipeworx/mcp-bluesky
+# mcp-bluesky
 
-MCP server for Bluesky social network -- search posts, get profiles, and browse feeds. Wraps the [AT Protocol API](https://docs.bsky.app/).
+Bluesky MCP — wraps the AT Protocol API
+
+Part of the [Pipeworx](https://pipeworx.io) open MCP gateway.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `get_profile` | Get a user profile by handle |
-| `get_posts` | Get recent posts from a user's feed |
-| `search_posts` | Search posts by keyword (requires auth) |
-| `get_feed` | Get posts from a feed (default: whats-hot) |
-| `get_followers` | Get a user's followers |
-| `get_follows` | Get accounts a user follows |
-| `get_thread` | Get a post thread by AT URI |
-| `resolve_handle` | Resolve a handle to a DID |
+| `get_profile` | [Public] Get a Bluesky user profile by handle (e.g., "alice.bsky.social") |
+| `get_posts` | [Public] Get recent posts from a Bluesky user's feed |
+| `get_feed` | [Public] Get posts from a Bluesky feed (default: discover/whats-hot) |
+| `get_followers` | [Public] Get a user's followers |
+| `get_follows` | [Public] Get accounts that a user follows |
+| `get_thread` | [Public] Get a post thread by AT URI |
+| `resolve_handle` | [Public] Resolve a Bluesky handle to a DID |
 
 ## Quick Start
 
@@ -29,7 +30,7 @@ Add to your MCP client config:
 }
 ```
 
-Or run via CLI:
+Or use the CLI:
 
 ```bash
 npx pipeworx use bluesky

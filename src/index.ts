@@ -1,11 +1,3 @@
-/**
- * Bluesky MCP — wraps the AT Protocol API
- *
- * 8 tools for reading Bluesky data.
- * Most tools use the public API (no auth). search_posts requires BYO auth
- * via bsky_handle + bsky_app_password query params on the gateway URL.
- */
-
 interface McpToolDefinition {
   name: string;
   description: string;
@@ -20,6 +12,15 @@ interface McpToolExport {
   tools: McpToolDefinition[];
   callTool: (name: string, args: Record<string, unknown>) => Promise<unknown>;
 }
+
+/**
+ * Bluesky MCP — wraps the AT Protocol API
+ *
+ * 8 tools for reading Bluesky data.
+ * Most tools use the public API (no auth). search_posts requires BYO auth
+ * via bsky_handle + bsky_app_password query params on the gateway URL.
+ */
+
 
 const API = 'https://public.api.bsky.app/xrpc';
 const AUTH_API = 'https://bsky.social/xrpc';
