@@ -2,20 +2,13 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.pipeworx-io/bluesky",
   "title": "Bluesky",
-  "description": "Bluesky MCP \u2014 wraps the AT Protocol API",
-  "version": "0.1.0",
+  "description": "Bluesky MCP — wraps the AT Protocol API",
+  "version": "0.1.1",
   "websiteUrl": "https://pipeworx.io/packs/bluesky",
   "repository": {
     "url": "https://github.com/pipeworx-io/mcp-bluesky",
     "source": "github"
   },
-  "packages": [
-    {
-      "registryType": "npm",
-      "identifier": "@pipeworx/mcp-bluesky",
-      "version": "0.1.0"
-    }
-  ],
   "remotes": [
     {
       "type": "streamable-http",
