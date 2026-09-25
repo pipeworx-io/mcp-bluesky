@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-bluesky",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Bluesky MCP — wraps the AT Protocol API",
   "type": "module",
   "main": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-6f810b9effbea6ff5914015a7538ecfb69dab64b278e31bb6f1799868c30eacb",
-    "sourceCommit": "60f04b68c347e970c6be94a53439d1364061fc06"
+    "sourceHash": "v1-06338b12af9795e06472e793edf52be7ffd2bb2ed1c5cca9cb8f16b319e00517",
+    "sourceCommit": "babdd280d475dceddecc9ebf8f2a661712781a81"
   }
 }
