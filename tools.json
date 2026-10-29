@@ -1,0 +1,147 @@
+[
+  {
+    "name": "get_profile",
+    "description": "Look up a Bluesky user's profile by handle (e.g., \"alice.bsky.social\"). Returns display name, bio, follower/following counts, avatar, and verification status.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "handle": {
+          "type": "string",
+          "description": "Bluesky handle (e.g., alice.bsky.social)"
+        }
+      },
+      "required": [
+        "handle"
+      ]
+    }
+  },
+  {
+    "name": "get_posts",
+    "description": "Fetch recent posts from a Bluesky user's timeline. Returns post text, timestamps, likes, reposts, reply counts, and threaded replies.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "handle": {
+          "type": "string",
+          "description": "Bluesky handle"
+        },
+        "limit": {
+          "type": "number",
+          "description": "Number of posts (1-100, default 20)"
+        }
+      },
+      "required": [
+        "handle"
+      ]
+    }
+  },
+  {
+    "name": "search_posts",
+    "description": "Search Bluesky posts by keyword or phrase. Returns matching posts with author handles, timestamps, engagement metrics, and content.Requires bsky_handle and bsky_app_password in the gateway URL query params.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Search query"
+        },
+        "limit": {
+          "type": "number",
+          "description": "Number of results (1-100, default 25)"
+        }
+      },
+      "required": [
+        "query"
+      ]
+    }
+  },
+  {
+    "name": "get_feed",
+    "description": "Get posts from a Bluesky feed (e.g., \"discover\", \"what's-hot\"). Returns recent posts with authors, timestamps, and engagement counts.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "feed_uri": {
+          "type": "string",
+          "description": "AT URI of the feed generator (default: whats-hot)"
+        },
+        "limit": {
+          "type": "number",
+          "description": "Number of posts (1-100, default 20)"
+        }
+      }
+    }
+  },
+  {
+    "name": "get_followers",
+    "description": "Get a user's followers on Bluesky by handle. Returns follower profiles including handles, display names, bios, and follower counts.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "handle": {
+          "type": "string",
+          "description": "Bluesky handle"
+        },
+        "limit": {
+          "type": "number",
+          "description": "Number of followers (1-100, default 50)"
+        }
+      },
+      "required": [
+        "handle"
+      ]
+    }
+  },
+  {
+    "name": "get_follows",
+    "description": "Get accounts a Bluesky user follows by handle. Returns followed profiles with handles, display names, bios, and descriptions.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "handle": {
+          "type": "string",
+          "description": "Bluesky handle"
+        },
+        "limit": {
+          "type": "number",
+          "description": "Number of follows (1-100, default 50)"
+        }
+      },
+      "required": [
+        "handle"
+      ]
+    }
+  },
+  {
+    "name": "get_thread",
+    "description": "Fetch a post thread by URI. Returns the parent post and all replies in conversation order with timestamps, authors, and engagement data.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "post_uri": {
+          "type": "string",
+          "description": "AT URI of the post (at://did/app.bsky.feed.post/rkey)"
+        }
+      },
+      "required": [
+        "post_uri"
+      ]
+    }
+  },
+  {
+    "name": "resolve_handle",
+    "description": "Convert a Bluesky handle to its DID (decentralized identifier). Returns the DID for programmatic account lookups.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "handle": {
+          "type": "string",
+          "description": "Bluesky handle to resolve"
+        }
+      },
+      "required": [
+        "handle"
+      ]
+    }
+  }
+]

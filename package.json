@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-bluesky",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Bluesky MCP — wraps the AT Protocol API",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-bluesky": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "bluesky"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-bluesky.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/bluesky",
   "pipeworx": {
-    "sourceHash": "v1-2391d0095b93be0a09ece85ee8eb144cae3dc52e0968a74b10eadae1874b435f",
-    "sourceCommit": "70a4e816a9195016cd4af92dca2019485d4c3865"
+    "mode": "gateway",
+    "slug": "bluesky",
+    "gatewaySlug": "bluesky",
+    "sourceHash": "v1-6975633d7d134ec183ce7975f586dc22bf1556dee43b6838f1a3c49dfb5e69c9",
+    "sourceCommit": "4277282d72f9bf55e548b3799aaf737baf22152f"
   }
 }
